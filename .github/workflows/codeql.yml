@@ -28,6 +28,8 @@ jobs:
     #   - https://gh.io/using-larger-runners (GitHub.com only)
     # Consider using larger runners or machines with greater resources for possible analysis time improvements.
     runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    container:
+      image:  osrf/ros:humble-desktop-full
     timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
     permissions:
       # required for all workflows
