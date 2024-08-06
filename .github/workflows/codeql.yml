@@ -66,6 +66,7 @@ jobs:
         source /opt/ros/humble/setup.bash
         colcon build --packages-up-to scenario_execution_interfaces
         source install/setup.bash
+        rosdep install --rosdistro=humble --from-paths scenario_execution_rviz --ignore-src -r -y;
         mkdir build_rviz
         cd build_rviz
         cmake ../scenario_execution_rviz
