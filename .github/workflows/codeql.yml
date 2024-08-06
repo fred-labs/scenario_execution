@@ -64,6 +64,8 @@ jobs:
       shell: bash
       run: |
         source /opt/ros/humble/setup.bash
+        colcon build --packages-up-to scenario_execution_interfaces
+        source install/setup.bash
         mkdir build
         cd build
         cmake ../scenario_execution_rviz
