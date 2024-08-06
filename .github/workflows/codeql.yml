@@ -61,6 +61,7 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
+        source /opt/ros/humble/setup.bash
         mkdir build
         cd build
         cmake ../scenario_execution_rviz
